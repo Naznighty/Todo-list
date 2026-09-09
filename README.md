@@ -4,7 +4,7 @@ A clean, modern to-do list app built with **vanilla JavaScript**, **HTML**, and 
 
 🔗 **[Live Demo](#)** <!-- replace # with your GitHub Pages / Netlify / Vercel link -->
 
-![To-Do App Screenshot](<img width="1458" height="744" alt="screenshot" src="https://github.com/user-attachments/assets/99fabf3d-57e0-4a30-b58b-e7f4554c3915" />) <!-- add a screenshot file to the repo and update this path -->
+![To-Do App Screenshot] <img width="1458" height="744" alt="screenshot" src="https://github.com/user-attachments/assets/99fabf3d-57e0-4a30-b58b-e7f4554c3915" /> <!-- add a screenshot file to the repo and update this path -->
 
 ## ✨ Features
 
