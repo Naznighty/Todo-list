@@ -1,0 +1,323 @@
+:root {
+  --bg: #f5f5f5;
+  --surface: rgba(247, 184, 222, 0.45);
+  --border: rgba(255, 255, 255, 0.25);
+  --text: #ffffff;
+  --text-muted: #f0c9d6;
+  --accent: #e0507f;
+  --danger: #d9534f;
+  --radius: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 100px 50px;
+  background-image: linear-gradient(
+    180deg,
+    #e0507f 0%,
+    #4a1a2e 40%,
+    #0a0508 80%,
+    #000000 100%
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  gap: 25px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.app-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.add-todo-section {
+  margin-bottom: 20px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.todo-input:focus {
+  outline: 2px solid var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-add {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-clear {
+  color: var(--text-muted);
+}
+
+.btn-clear:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.todo-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: grab;
+}
+
+.todo-item.dragging {
+  opacity: 0.5;
+}
+
+.todo-item.drag-over-top {
+  border-top: 2px solid var(--accent);
+}
+
+.todo-item.drag-over-bottom {
+  border-bottom: 2px solid var(--accent);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.todo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.todo-edit-input {
+  flex: 1;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font-size: 1rem;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.todo-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.todo-action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.todo-action-btn.delete:hover,
+.todo-action-btn.cancel:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.todo-action-btn.save {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.drag-handle {
+  color: var(--text-muted);
+}
+
+.drag-handle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.empty-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-state.show {
+  display: flex;
+}
+
+.empty-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.empty-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.empty-text {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.app-footer .btn-clear {
+  display: none;
+}
+
+.app-footer .btn-clear.show {
+  display: inline-flex;
+}
+
+@media (max-width: 480px) {
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .btn-add {
+    width: 100%;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
