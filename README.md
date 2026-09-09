@@ -70,12 +70,6 @@ Colors, spacing, and border radius are controlled through CSS custom properties 
 }
 ```
 
-## 🗺️ Roadmap / Possible Improvements
-
-- [ ] Task due dates & reminders
-- [ ] Categories / tags
-- [ ] Dark / light theme toggle
-- [ ] Sync with a backend (e.g., Django REST API)
 
 ## 📄 License
 
